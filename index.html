@@ -224,7 +224,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #ff
     <h1>How broke traders are becoming the top 2% of Brickell without another blown account, or revenge-trading weekend.</h1>
     <p class="lede">The <b>3-skill system</b> (paintball, club, yacht) used by <b>15 degens</b> to escape the 9-to-5 for exactly one weekend.</p>
     <div class="vsl" id="vsl">
-      <video id="vid" src="media/yash-miami.mp4" poster="media/yash-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Free masterclass video"></video>
+      <video id="vid" poster="media/yash-poster.jpg" autoplay muted loop playsinline webkit-playsinline preload="auto" aria-label="Free masterclass video"><source src="media/yash-miami.mp4" type="video/mp4"><source src="media/yash-miami.webm" type="video/webm"></video>
       <div class="cap"><span>●</span> FREE MASTERCLASS</div>
       <button class="snd" id="snd" type="button" aria-pressed="false">🔇 Tap for sound</button>
     </div>
@@ -401,10 +401,19 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #ff
   const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
   const esc=s=>{const d=document.createElement("span");d.textContent=s;return d.innerHTML;};
 
-  // Hero video sound toggle
+  // Hero video: autoplay muted, tap for sound
   const vid=document.getElementById("vid"),snd=document.getElementById("snd");
-  snd.addEventListener("click",()=>{vid.muted=!vid.muted;if(!vid.muted){vid.currentTime=0;vid.play().catch(()=>{});}snd.textContent=vid.muted?"🔇 Tap for sound":"🔊 Sound on";snd.setAttribute("aria-pressed",String(!vid.muted));});
-  vid.play&&vid.play().catch(()=>{});
+  vid.muted=true;vid.defaultMuted=true;vid.setAttribute("muted","");vid.playsInline=true;
+  const tryPlay=()=>{if(vid.paused){const p=vid.play();if(p&&p.catch)p.catch(()=>{});}};
+  tryPlay();
+  vid.addEventListener("loadeddata",tryPlay);vid.addEventListener("canplay",tryPlay);
+  document.addEventListener("visibilitychange",()=>{if(!document.hidden)tryPlay();});
+  // Low Power Mode and some browsers block autoplay until the first touch: start it on any tap
+  ["pointerdown","touchstart","click","scroll"].forEach(ev=>addEventListener(ev,tryPlay,{passive:true}));
+  const setSound=on=>{vid.muted=!on;snd.textContent=on?"🔊 Sound on":"🔇 Tap for sound";snd.setAttribute("aria-pressed",String(on));};
+  const toggleSound=e=>{e.stopPropagation();const on=vid.muted;if(on)vid.currentTime=0;setSound(on);const p=vid.play();if(p&&p.catch)p.catch(()=>{});};
+  snd.addEventListener("click",toggleSound);
+  vid.addEventListener("click",toggleSound);vid.style.cursor="pointer";
 
   // Discord mock
   const C={sniper:["#c9a227","BS"],bot:["#5865f2","PB"],holden:["#e67e22","H"],sai:["#1abc9c","SP"],julian:["#9b59b6","J"],eddie:["#e74c3c","E"],mateo:["#3498db","M"],hassan:["#2ecc71","H"]};
@@ -451,7 +460,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #ff
   const ad=document.getElementById("ad"),adT=document.getElementById("adT");let adLeft=299,adTick=null,lastFocus=null;
   function tickAd(){adT.textContent=String(Math.floor(adLeft/60)).padStart(2,"0")+":"+String(adLeft%60).padStart(2,"0");adLeft=adLeft>0?adLeft-1:299;}
   function openAd(){lastFocus=document.activeElement;ad.hidden=false;adLeft=299;tickAd();clearInterval(adTick);adTick=setInterval(tickAd,1000);document.getElementById("adGo").focus({preventScroll:true});}
-  function closeAd(){ad.hidden=true;clearInterval(adTick);if(lastFocus&&lastFocus.focus)lastFocus.focus({preventScroll:true});}
+  function closeAd(){ad.hidden=true;clearInterval(adTick);try{vid.currentTime=0;tryPlay();}catch(e){}if(lastFocus&&lastFocus.focus)lastFocus.focus({preventScroll:true});}
   document.getElementById("adX").addEventListener("click",closeAd);
   document.getElementById("adNo").addEventListener("click",closeAd);
   document.getElementById("adOpen").addEventListener("click",openAd);
