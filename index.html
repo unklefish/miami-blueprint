@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="15 degens. 3 days. Paintball, club, yacht. Apply now.">
+<meta property="og:title" content="$MIAMI Blueprint">
+<meta property="og:description" content="I turned $50 into a yacht using ONE ICT concept. Apply now.">
+<meta property="og:image" content="media/yash-poster.jpg">
+<meta name="theme-color" content="#0b0803">
+<title>$MIAMI Liquidity Event</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=JetBrains+Mono:wght@400;600;800&family=Figtree:wght@400;600;800&display=swap">
+<style>
+/* Layout: parody trading-course sales funnel in one phone column. Urgency bar, nav, guru hero with VSL, stats strip, fake Discord server, curriculum (the 3 days), pricing tiers, application (RSVP order book), FAQ, closing CTA, disclaimer wall. Black and gold guru look, Discord blurple only inside the server mock. Single committed dark look. */
+:root{
+  --bg:#0b0803;
+  --panel:#171105;
+  --line:#4a3a17;
+  --fg:#f3e7c6;
+  --dim:#9b8a5f;
+  --gold:#ffcf5a;
+  --gold2:#fff3c4;
+  --long:#62e3a0;
+  --short:#ff4d4d;
+  --chop:#ffcf5a;
+  --dc-bg:#1e1f22;
+  --dc-panel:#2b2d31;
+  --dc-text:#dbdee1;
+  --dc-dim:#949ba4;
+  --blurple:#5865f2;
+  --display:"Rubik Mono One","Arial Black",Impact,sans-serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+img,video{max-width:100%}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.5;margin:0;
+  background-image:radial-gradient(120% 40% at 50% 0%,rgba(255,207,90,.2),transparent 65%),radial-gradient(80% 30% at 0% 55%,rgba(255,207,90,.07),transparent 60%);}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:#ff4d4d}
+.gutter{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.urgent{background:var(--short);color:#fff;text-align:center;font:800 13px var(--body);padding-block:8px}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:rgba(11,8,3,.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:620px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding-block:10px}
+.logo{font:400 15px var(--display);color:var(--gold)}
+.logo small{font:600 10px var(--mono);color:var(--dim);display:block;letter-spacing:.1em}
+.btn-dc{display:inline-flex;align-items:center;gap:6px;background:var(--blurple);color:#fff;text-decoration:none;font:800 13px var(--body);padding:8px 12px;border-radius:10px;white-space:nowrap}
+.wrap{max-width:620px;margin:0 auto;padding-block:24px 48px;display:flex;flex-direction:column;gap:44px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(26px,7.4vw,40px);line-height:1.08;margin:0;text-wrap:balance;
+  background:linear-gradient(100deg,var(--gold),var(--gold2) 45%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 18px rgba(255,207,90,.3))}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(20px,5.6vw,26px);line-height:1.15;margin:0;color:var(--gold);text-wrap:balance}
+h2 span{color:var(--fg)}
+section{display:flex;flex-direction:column;gap:16px}
+.lede{margin:0;font-size:17px;color:var(--fg);text-wrap:pretty}
+.lede b{color:var(--gold)}
+.badge{align-self:flex-start;display:inline-flex;gap:8px;align-items:center;border:1px solid var(--gold);border-radius:999px;padding:5px 12px;font:600 12px var(--mono);color:var(--gold2);background:rgba(255,207,90,.08)}
+.hero{display:flex;flex-direction:column;gap:16px}
+.vsl{position:relative;align-self:center;width:100%;max-width:min(380px,calc(62vh * 9 / 16));aspect-ratio:9/16;border:2px solid var(--gold);border-radius:18px;overflow:hidden;background:#0d0a03;box-shadow:0 0 40px rgba(255,207,90,.25)}
+.vsl video{display:block;width:100%;height:100%;object-fit:cover}
+.vsl .cap{position:absolute;top:10px;left:10px;font:800 11px var(--mono);color:#fff;background:rgba(0,0,0,.6);padding:4px 8px;border-radius:6px;letter-spacing:.06em}
+.vsl .cap span{color:var(--short);animation:blink 1s infinite}
+.snd{position:absolute;top:10px;right:10px;font:800 12px var(--body);color:#1d1606;background:var(--gold);border:0;border-radius:999px;padding:7px 12px;cursor:pointer;box-shadow:0 0 16px rgba(255,207,90,.6)}
+.ctas{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cta{display:flex;align-items:center;justify-content:center;text-align:center;font:400 13px var(--display);text-decoration:none;padding:15px 8px;border-radius:12px;cursor:pointer;border:0}
+.cta.gold{color:#1d1606;background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold));animation:throb 1.1s ease-in-out infinite}
+.cta.ghost{color:var(--gold);border:2px solid var(--gold);background:transparent}
+.fine-sm{font-size:11px;color:var(--dim);margin:0;text-align:center}
+@keyframes throb{50%{transform:scale(1.035);box-shadow:0 0 28px rgba(255,207,90,.6)}}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);border:1.5px solid var(--gold);border-radius:14px;overflow:hidden}
+.stats div{padding:14px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:2px;min-width:0}
+.stats div:nth-child(odd){border-right:1px solid var(--line)}
+.stats div:nth-last-child(-n+2){border-bottom:0}
+.stats b{font:400 24px var(--display);color:var(--gold);font-variant-numeric:tabular-nums}
+.stats span{font-size:13px;color:var(--dim)}
+/* Discord mock */
+.dc{background:var(--dc-bg);border-radius:14px;overflow:hidden;border:1px solid #3a3c42;font-family:var(--body);color:var(--dc-text)}
+.dc-top{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--dc-panel);border-bottom:1px solid #1a1b1e}
+.dc-srv{width:34px;height:34px;border-radius:12px;background:linear-gradient(135deg,var(--gold),#b8862b);display:grid;place-items:center;font:400 11px var(--display);color:#1d1606;flex:none}
+.dc-top b{font-size:15px;display:block}
+.dc-top small{color:var(--dc-dim);font-size:12px}
+.dc-chans{display:flex;gap:6px;overflow-x:auto;padding:10px 12px;background:var(--dc-panel);scrollbar-width:none}
+.dc-chans::-webkit-scrollbar{display:none}
+.dc-chans button{flex:none;border:0;background:transparent;color:var(--dc-dim);font:600 13px var(--body);padding:6px 10px;border-radius:6px;cursor:pointer}
+.dc-chans button[aria-selected=true]{background:#404249;color:#fff}
+.dc-msgs{list-style:none;margin:0;padding:12px 14px;display:flex;flex-direction:column;gap:14px;min-height:300px}
+.dc-msg{display:grid;grid-template-columns:36px 1fr;gap:10px}
+.dc-av{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font:800 13px var(--body);color:#fff}
+.dc-msg header{display:flex;gap:6px;align-items:baseline;flex-wrap:wrap}
+.dc-msg header b{font-size:14px}
+.dc-msg header time{font-size:11px;color:var(--dc-dim)}
+.dc-bot{background:var(--blurple);color:#fff;font:800 9px var(--body);padding:1px 4px;border-radius:3px;letter-spacing:.03em}
+.dc-msg p{margin:2px 0 0;font-size:14px;min-width:0;overflow-wrap:anywhere}
+.dc-msg .ping{background:rgba(88,101,242,.3);color:#c9cdfb;border-radius:3px;padding:0 2px}
+.dc-embed{margin-top:6px;border-left:4px solid var(--long);background:var(--dc-panel);border-radius:4px;padding:8px 10px;font-size:13px}
+.dc-embed.red{border-left-color:var(--short)}
+.dc-embed b{display:block;font-size:13px}
+.dc-embed .n{font:800 18px var(--mono)}
+.dc-react{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
+.dc-react span{background:#2b2d31;border:1px solid #3a3c42;border-radius:8px;padding:1px 7px;font-size:12px}
+.dc-input{margin:0 12px 12px;background:#383a40;border-radius:8px;padding:10px 12px;color:var(--dc-dim);font-size:14px}
+/* Curriculum */
+.mods{display:flex;flex-direction:column;gap:12px}
+.mod{border:1.5px solid var(--line);border-radius:14px;background:linear-gradient(160deg,#1d1606,#0d0a03 70%);padding:16px;display:flex;flex-direction:column;gap:10px}
+.mod header{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.mod .num{font:600 11px var(--mono);color:var(--dim);letter-spacing:.1em;text-transform:uppercase;display:block}
+.mod h3{margin:0;font-size:18px;font-weight:800;color:var(--gold)}
+.tag{font-family:var(--mono);font-size:11px;padding:3px 8px;border-radius:999px;border:1px solid currentColor;white-space:nowrap}
+.mod ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.mod li{display:grid;grid-template-columns:56px 1fr;gap:10px;font-size:15px}
+.mod li time{font-family:var(--mono);font-size:12px;color:var(--dim);padding-top:2px}
+.mod li span{min-width:0}
+.lock{font-size:12px;color:var(--dim);font-family:var(--mono)}
+/* Pricing */
+.tiers{display:flex;flex-direction:column;gap:12px}
+.tier{border:1.5px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px;background:#120d04;position:relative}
+.tier.pop{border-color:var(--gold);box-shadow:0 0 36px rgba(255,207,90,.22);background:linear-gradient(160deg,#241a07,#0d0a03 70%)}
+.tier .ribbon{position:absolute;top:-11px;right:16px;background:var(--gold);color:#1d1606;font:400 10px var(--display);padding:4px 10px;border-radius:999px}
+.tier h3{margin:0;font:400 16px var(--display);color:var(--gold2)}
+.tier .price{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.tier .price b{font:400 28px var(--display);color:var(--gold)}
+.tier .price s{color:var(--dim);font-family:var(--mono);font-size:13px}
+.tier .price small{color:var(--dim);font-size:13px}
+.tier ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:14px}
+.tier li::before{content:"✓ ";color:var(--long);font-weight:800}
+.tier li.x::before{content:"✗ ";color:var(--short)}
+.tier .cta{margin-top:4px}
+/* Rules */
+.rules{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.rules li{display:flex;gap:12px;font-size:15px}
+.rules li b{font-family:var(--mono);color:var(--gold);flex:none}
+/* Application */
+.book{border:2px solid var(--gold);border-radius:16px;background:linear-gradient(160deg,#1d1606,#0d0a03 70%);box-shadow:0 0 36px rgba(255,207,90,.22);padding:18px;display:flex;flex-direction:column;gap:16px}
+.seats{display:flex;flex-direction:column;gap:8px}
+.seats .row{display:flex;justify-content:space-between;font-family:var(--mono);font-size:13px}
+.bar{height:10px;border-radius:999px;background:var(--line);overflow:hidden;display:flex}
+.bar i{display:block;height:100%;transition:width .5s}
+label{font-family:var(--mono);font-size:12px;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:6px}
+input[type=text]{width:100%;font:600 16px var(--body);color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px}
+input[type=text]:focus{outline:2px solid var(--gold);outline-offset:1px}
+.btns{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.btns button{font:400 14px var(--display);padding:14px 4px;border-radius:12px;border:2px solid currentColor;background:transparent;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px}
+.btns button small{font:600 11px var(--body);color:var(--dim);letter-spacing:0}
+.btns .l{color:var(--long)}.btns .s{color:var(--short)}.btns .c{color:var(--chop)}
+.btns button[aria-pressed=true]{background:currentColor}
+.btns button[aria-pressed=true] small,.btns button[aria-pressed=true] span{color:var(--bg)}
+.status{font-family:var(--mono);font-size:13px;color:var(--dim);min-height:1.5em}
+.status.ok{color:var(--long)}.status.err{color:var(--chop)}
+.orders{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.orders li{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.orders .side{font-family:var(--mono);font-weight:800;font-size:12px;padding-top:3px;width:52px}
+.orders .who{font-weight:800;min-width:0;overflow-wrap:anywhere}
+.orders .note{grid-column:2;color:var(--dim);font-size:14px;overflow-wrap:anywhere}
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;font:600 13px var(--mono);color:var(--dim)}
+.empty{color:var(--dim);font-size:14px;padding:6px 0}
+.fallback{display:flex;flex-direction:column;gap:8px;border:1px dashed var(--chop);border-radius:12px;padding:12px}
+.fallback code{font-family:var(--mono);font-size:14px;background:var(--bg);padding:10px;border-radius:8px;user-select:all;overflow-wrap:anywhere}
+.fallback button{align-self:flex-start;font:800 13px var(--mono);color:var(--bg);background:var(--chop);border:0;border-radius:8px;padding:8px 12px;cursor:pointer}
+/* FAQ */
+.faq{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{font-weight:800;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::after{content:"+";color:var(--gold);font:400 16px var(--display)}
+.faq details[open] summary::after{content:"–"}
+.faq summary::-webkit-details-marker{display:none}
+.faq p{margin:8px 0 0;color:var(--dim);font-size:15px}
+.closer{text-align:center;align-items:center;border:2px solid var(--gold);border-radius:18px;padding:24px 18px;background:radial-gradient(100% 100% at 50% 0%,rgba(255,207,90,.18),transparent 70%)}
+.closer .cta{width:100%}
+.disclaimer{font-size:10px;line-height:1.5;color:#6f6343;display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--line);padding-top:16px}
+.disclaimer p{margin:0}
+.adlink{background:none;border:0;color:var(--chop);font:600 11px var(--mono);text-decoration:underline;cursor:pointer;padding:6px;align-self:center}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #fff;outline-offset:2px}
+/* Pop-up ad */
+.ad{position:fixed;inset:0;z-index:20;background:rgba(4,8,16,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.ad-rain{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.ad-card{position:relative;width:100%;max-width:400px;max-height:100%;overflow:auto;background:linear-gradient(160deg,#1d1606,#0d0a03 60%);border:2px solid var(--gold);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:12px;box-shadow:0 0 40px rgba(255,207,90,.35);animation:pop .45s cubic-bezier(.2,1.6,.4,1)}
+@keyframes pop{from{transform:scale(.7) rotate(-3deg)}to{transform:none}}
+.ad-x{position:absolute;top:8px;right:10px;background:none;border:0;color:#9b8a5f;font:600 22px var(--body);cursor:pointer;padding:4px 8px}
+.ad-live{display:flex;align-items:center;gap:6px;font:600 11px var(--mono);color:#ff4d4d;letter-spacing:.05em}
+.ad-live i{width:7px;height:7px;border-radius:50%;background:#ff4d4d;animation:blink 1s infinite}
+@keyframes blink{50%{opacity:.25}}
+.ad-alert{font:400 13px var(--display);color:#ff4d4d;letter-spacing:.04em;animation:blink 1s infinite}
+.ad-who{display:flex;gap:10px;align-items:center}
+.ad-av{width:46px;height:46px;border-radius:50%;flex:none;background:conic-gradient(var(--gold),var(--gold2),var(--gold));display:grid;place-items:center;font:400 14px var(--display);color:#1d1606}
+.ad-who b{display:block;font-weight:800;color:var(--gold2)}
+.ad-who small{color:#9b8a5f;font-size:12px}
+.ad-chk{display:inline-grid;place-items:center;width:15px;height:15px;border-radius:50%;background:#3d9bff;color:#fff;font-size:10px;margin-left:4px;vertical-align:1px}
+.ad-h{font:400 22px/1.15 var(--display);color:var(--gold);margin:0;text-wrap:balance}
+.ad-seen{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font:600 10px var(--mono);color:#9b8a5f}
+.ad-seen b{border:1px solid #5a4a22;border-radius:6px;padding:2px 6px;color:#f3e7c6;font-weight:600}
+.ad-p{margin:0;color:#f3e7c6;font-size:15px}
+.ad-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:14px;color:#f3e7c6}
+.ad-test{border-left:3px solid var(--gold);padding:6px 10px;font-style:italic;color:var(--gold2);font-size:14px;min-height:3.6em}
+.ad-test small{display:block;font-style:normal;color:#9b8a5f;font-size:12px}
+.ad-spots{text-align:center;font:400 12px var(--display);color:#ff4d4d;background:rgba(255,77,77,.1);border:1px dashed #ff4d4d;border-radius:8px;padding:8px}
+.ad-price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.ad-price s{color:#9b8a5f;font-family:var(--mono)}
+.ad-price b{font:400 24px var(--display);color:var(--gold)}
+.ad-timer{font-family:var(--mono);font-size:13px;color:#ff4d4d}
+.ad-go{font:400 15px var(--display);color:#1d1606;background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold));border:0;border-radius:12px;padding:15px;cursor:pointer;animation:throb 1.1s ease-in-out infinite}
+.ad-no{background:none;border:0;color:#9b8a5f;font:600 13px var(--body);text-decoration:underline;cursor:pointer;padding:4px}
+.ad-fine{font-size:10px;color:#6f6343;line-height:1.4;margin:0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+
+<div class="urgent gutter">⏰ If you're reading this in October, you could be in Brickell by Friday 💰</div>
+
+<nav class="nav gutter"><div class="nav-in">
+  <span class="logo">$MIAMI BLUEPRINT<small>BY @BRICKELLSNIPER</small></span>
+  <a class="btn-dc" href="https://snapchat.com/t/S25I2VBA" target="_blank" rel="noopener">Join the GC</a>
+</div></nav>
+
+<main class="wrap gutter">
+
+  <header class="hero">
+    <span class="badge">🏆 2026 Winner · Group Chat #1 · 4.8 ⭐ (from Hassan's mom)</span>
+    <h1>How broke traders are becoming the top 2% of Brickell without another blown account, or revenge-trading weekend.</h1>
+    <p class="lede">The <b>3-skill system</b> (paintball, club, yacht) used by <b>15 degens</b> to escape the 9-to-5 for exactly one weekend.</p>
+    <div class="vsl" id="vsl">
+      <video id="vid" src="media/yash-miami.mp4" poster="media/yash-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Free masterclass video"></video>
+      <div class="cap"><span>●</span> FREE MASTERCLASS</div>
+      <button class="snd" id="snd" type="button" aria-pressed="false">🔇 Tap for sound</button>
+    </div>
+    <div class="ctas">
+      <a class="cta gold" href="#apply">Apply now</a>
+      <a class="cta ghost" href="#pricing">View pricing</a>
+    </div>
+    <p class="fine-sm">Top testimonials do not represent typical results. Typical result is a sunburn.</p>
+  </header>
+
+  <div class="stats">
+    <div><b>15</b><span>Active members</span></div>
+    <div><b>3</b><span>Killzones (Fri, Sat, Sun)</span></div>
+    <div><b>24/7</b><span>Group chat activity</span></div>
+    <div><b>0</b><span>Profitable trades posted</span></div>
+  </div>
+
+  <section>
+    <h2>Trading is hard. <span>Miami alone is harder.</span></h2>
+    <p class="lede">Get access to the private server where the real ones plan the weekend. Daily trade ideas. Live yacht signals. A paintball war room. 1-on-1 check-ins from Julian asking if you've Venmo'd yet.</p>
+    <div class="dc">
+      <div class="dc-top"><span class="dc-srv">$M</span><div><b>$MIAMI Blueprint 💎</b><small>🟢 15 online · 🔒 Invite only</small></div></div>
+      <div class="dc-chans" role="tablist" aria-label="Channels" id="chans"></div>
+      <ul class="dc-msgs" id="msgs"></ul>
+      <div class="dc-input">Message #<span id="chanName">announcements</span></div>
+    </div>
+  </section>
+
+  <section>
+    <span class="eyebrow">What's inside the Blueprint</span>
+    <h2>The 3-day curriculum</h2>
+    <div class="mods">
+      <article class="mod">
+        <header><div><span class="num">Module 1 · Friday</span><h3>Asia Session</h3></div><span class="tag" style="color:var(--long)">Accumulation</span></header>
+        <ul>
+          <li><time>PM</time><span>Land, check in, Publix run. Sweep the buy-side liquidity on the snack aisle.</span></li>
+          <li><time>4:00</time><span>South Beach. Range-bound price action. Lay out and wait for displacement.</span></li>
+          <li><time>8:30</time><span>Group dinner, tentative. Limit order resting. Fills if the whole crew lands in time.</span></li>
+          <li><time>10:30</time><span>Light size in Brickell. Asia builds the range. Do not blow the account before Saturday.</span></li>
+        </ul>
+      </article>
+      <article class="mod">
+        <header><div><span class="num">Module 2 · Saturday</span><h3>London Killzone</h3></div><span class="tag" style="color:var(--short)">Main event</span></header>
+        <ul>
+          <li><time>10:00</time><span>Breakfast at the house. Hydrate. Hydration is the only hedge that works.</span></li>
+          <li><time>12:00</time><span>Paintball. Judas swing: fake left, flank right, hunt their stops behind the order block.</span></li>
+          <li><time>2:00</time><span>Break of structure. Whoever gets lit up first buys the next round.</span></li>
+          <li><time>4:00</time><span>Pool and cooldown. Every welt is a lesson. Journal it.</span></li>
+          <li><time>8:00</time><span>Group dinner, locked in. Enter at the OTE: 62 to 79% of the menu, never the wagyu.</span></li>
+          <li><time>10:30</time><span>Silver Bullet window. Club right after dinner, early entry. No chasing at the door.</span></li>
+        </ul>
+      </article>
+      <article class="mod">
+        <header><div><span class="num">Module 3 · Sunday</span><h3>NY Session</h3></div><span class="tag" style="color:var(--chop)">Distribution</span></header>
+        <ul>
+          <li><time>AM</time><span>Recover the portfolio. Cuban coffee, electrolytes, zero opinions.</span></li>
+          <li><time>Day</time><span>Yacht on Biscayne Bay. The draw on liquidity. Every chart was pointing here.</span></li>
+          <li><time>Day</time><span>Sandbar stop. A fair value gap in the ocean. Jump in and fill it.</span></li>
+          <li><time>PM</time><span>Dinner TBD. Depends how hard the yacht closes. Close all positions before the weekly close.</span></li>
+        </ul>
+      </article>
+      <p class="lock">🔒 Bonus module unlocks after you RSVP: "How to explain this trip to your parents."</p>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <h2>Simple, <span>transparent pricing.</span></h2>
+    <p class="lede">Real cost is the house and yacht split 15 ways. Exact number drops in the GC. Everything below is cap.</p>
+    <div class="tiers">
+      <article class="tier">
+        <h3>Paper Hands</h3>
+        <div class="price"><b>$55</b><small>/ Friday only</small></div>
+        <ul><li>Friday beach + tentative dinner</li><li>Read-only Discord access</li><li class="x">Paintball</li><li class="x">Yacht</li><li class="x">Respect</li></ul>
+        <a class="cta ghost" href="#apply">Start weekly</a>
+      </article>
+      <article class="tier pop">
+        <span class="ribbon">Most popular</span>
+        <h3>Full Send</h3>
+        <div class="price"><s>$4,997</s><b>Your share</b><small>/ 3 days</small></div>
+        <ul><li>All 3 modules (Fri, Sat, Sun)</li><li>Paintball war, live</li><li>Club table, split across the group</li><li>Yacht on Biscayne Bay</li><li>Lifetime group chat screenshots</li></ul>
+        <a class="cta gold" href="#apply">Get full access</a>
+      </article>
+      <article class="tier">
+        <h3>The Yash System</h3>
+        <div class="price"><b>Contact us</b></div>
+        <ul><li>Everything in Full Send</li><li>Yash personally gets you out of crippling debt</li><li>1 free month of Discord</li><li>Priority seat on the yacht</li></ul>
+        <a class="cta ghost" href="#apply">Apply now</a>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2>Server rules</h2>
+    <ul class="rules">
+      <li><b>R1</b><span>Only trade the killzones. No 5 AM re-entries after the club.</span></li>
+      <li><b>R2</b><span>No FOMO. Wait for the FVG before you order another round.</span></li>
+      <li><b>R3</b><span>All shared costs go through one wallet. House, paintball, table, yacht. Pay your gas fees on time.</span></li>
+      <li><b>R4</b><span>Buddy system. Nobody gets their stops hunted alone in an Uber.</span></li>
+      <li><b>R5</b><span>Paintball: no headshots. This is a pullback, not a liquidation event.</span></li>
+      <li><b>R6</b><span>What happens on the yacht stays off the timeline.</span></li>
+    </ul>
+  </section>
+
+  <section id="apply">
+    <span class="eyebrow">Application · 15 seats</span>
+    <h2>Place your order</h2>
+    <div class="book">
+      <p class="lede" style="font-size:15px">Orders are filled in the group chat. Hop in and drop <b style="color:var(--long)">LONG</b>, <b style="color:var(--chop)">CHOP</b> or <b style="color:var(--short)">SHORT</b>. The dev confirms fills.</p>
+      <div class="legend">
+        <span><b style="color:var(--long)">LONG</b> I'm in</span>
+        <span><b style="color:var(--chop)">CHOP</b> Maybe</span>
+        <span><b style="color:var(--short)">SHORT</b> Can't go</span>
+      </div>
+      <a class="cta gold" href="https://snapchat.com/t/S25I2VBA" target="_blank" rel="noopener">Join the group chat</a>
+      <p class="fine-sm">Opens Snapchat. Paper hands will be screenshotted.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>FAQ</h2>
+    <div class="faq">
+      <details><summary>Do I need experience?</summary><p>No. Mateo still doesn't know when London opens and he's been in the Discord since day one.</p></details>
+      <details><summary>Is there a free trial?</summary><p>Friday dinner is the free trial. It's tentative, like every setup Eddie takes.</p></details>
+      <details><summary>Which markets do you trade?</summary><p>Paintball, the club and the yacht. Miami futures only.</p></details>
+      <details><summary>Can I cancel anytime?</summary><p>Yes. Tap SHORT. We will talk about you in the group chat.</p></details>
+      <details><summary>What if I get liquidated Saturday night?</summary><p>Buddy system. Someone carries you to the Uber. Sunday is a yacht, not a recovery day.</p></details>
+      <details><summary>How is this different from other Discords?</summary><p>We actually go outside.</p></details>
+    </div>
+  </section>
+
+  <section class="closer">
+    <span class="badge" style="align-self:center">Free trial available</span>
+    <h2>Ready to level up your weekend?</h2>
+    <p class="lede">Friday to Sunday. Paintball, club, yacht. No credit card required. Venmo required.</p>
+    <a class="cta gold" href="#apply">Start your free week</a>
+  </section>
+
+  <div class="disclaimer">
+    <button class="adlink" id="adOpen" type="button">Watch the free masterclass again</button>
+    <p>RISK DISCLAIMER: Partying in Miami involves substantial risk of loss and is not suitable for every liver. Past performance at the club is not indicative of future results. Hypothetical yacht performance results have many inherent limitations.</p>
+    <p>INCOME DISCLAIMER: Nobody on this trip has made money from trading. Testimonials are from friends who were roasted without consent. @BrickellSniper is a fictional guru and has never had a green month.</p>
+    <p>This page is for educational and entertainment purposes only. Not financial advice. Not life advice. Not affiliated with any real trading course, Discord or human being with a stable income. © 2026 $MIAMI Blueprint. WAGMI.</p>
+  </div>
+</main>
+
+<div class="ad" id="ad" hidden role="dialog" aria-modal="true" aria-labelledby="adH">
+  <canvas class="ad-rain" id="adRain" aria-hidden="true"></canvas>
+  <div class="ad-card">
+    <div class="ad-live"><i></i>LIVE · <span id="adWatch">1,247</span> future millionaires watching</div>
+    <button class="ad-x" id="adX" type="button" aria-label="Close ad">×</button>
+    <span class="ad-alert">STOP SCROLLING BRO</span>
+    <div class="ad-who"><span class="ad-av">BS</span><div><b>@BrickellSniper<span class="ad-chk">✓</span></b><small>8-figure funded trader (sim) · Lambo (leased)</small></div></div>
+    <h3 class="ad-h" id="adH">I turned $50 into a yacht in Biscayne Bay using ONE ICT concept. 🛥️💸</h3>
+    <div class="ad-seen"><span>AS SEEN ON</span><b>My IG Story</b><b>My Mom's Facebook</b><b>A Bentley I sat in</b></div>
+    <p class="ad-p">While you were sleeping, I was in the London killzone sweeping liquidity from my balcony in Brickell. 95% of traders lose. The other 5% are coming on this trip.</p>
+    <ul class="ad-list">
+      <li>✓ The secret FVG the banks don't want you to know</li>
+      <li>✓ My 4 AM morning routine (cold plunge, journaling, gratitude, sweep Asia high)</li>
+      <li>✓ How to find order blocks in a paintball arena</li>
+      <li>✓ Free access to my Discord (47 members, 46 bots)</li>
+      <li>✓ BONUS: invite to a 3-day Miami trip with 14 other killers 🔥</li>
+    </ul>
+    <div class="ad-test" id="adTest" aria-live="polite"></div>
+    <div class="ad-spots">⚠️ ONLY <b id="adSpots">3</b> SPOTS LEFT AT THIS PRICE ⚠️</div>
+    <div class="ad-price"><s>$4,997</s><b>$997</b><span class="ad-timer">Expires in <span id="adT">04:59</span></span></div>
+    <button class="ad-go" id="adGo" type="button">YES, I WANT TO BE FUNDED</button>
+    <button class="ad-no" id="adNo" type="button">No thanks, I enjoy being exit liquidity</button>
+    <p class="ad-fine">Results not typical. Results not real. Yacht is rented and split 15 ways. @BrickellSniper is a fictional guru and has never had a green month.</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const esc=s=>{const d=document.createElement("span");d.textContent=s;return d.innerHTML;};
+
+  // Hero video sound toggle
+  const vid=document.getElementById("vid"),snd=document.getElementById("snd");
+  snd.addEventListener("click",()=>{vid.muted=!vid.muted;if(!vid.muted){vid.currentTime=0;vid.play().catch(()=>{});}snd.textContent=vid.muted?"🔇 Tap for sound":"🔊 Sound on";snd.setAttribute("aria-pressed",String(!vid.muted));});
+  vid.play&&vid.play().catch(()=>{});
+
+  // Discord mock
+  const C={sniper:["#c9a227","BS"],bot:["#5865f2","PB"],holden:["#e67e22","H"],sai:["#1abc9c","SP"],julian:["#9b59b6","J"],eddie:["#e74c3c","E"],mateo:["#3498db","M"],hassan:["#2ecc71","H"]};
+  const N={sniper:"BrickellSniper",bot:"ProfitBot",holden:"Holden",sai:"Sai Prakyath",julian:"Julian",eddie:"Eddie",mateo:"Mateo",hassan:"Hassan"};
+  const ch={
+    "announcements":[
+      ["sniper","9:30 AM",'<span class="ping">@everyone</span> 🚨 Miami killzone is LOCKED. Friday to Sunday. Paintball Saturday, yacht Sunday. RSVP in #apply or get left in Asia session.',null,["🔥 14","🛥️ 11","💀 3"]],
+      ["sniper","9:31 AM","Not financial advice. Just life-changing advice.",null,["🧢 9"]]
+    ],
+    "profit":[
+      ["holden","10:02 AM","!profit",null,null],
+      ["bot","10:02 AM","",{red:1,t:"Holden · this week",n:"-$420.69",s:"Keep going king 👑 the market owes you"},["😭 8"]],
+      ["sai","10:04 AM","!profit",null,null],
+      ["bot","10:04 AM","",{t:"Sai Prakyath · this week",n:"+$4.00",s:"FVG on the Uber Eats receipt. Generational."},["🐐 12"]],
+      ["eddie","10:05 AM","!profit",null,null],
+      ["bot","10:05 AM","",{red:1,t:"Eddie · sim account",n:"+$50,000 (fake)",s:"Payout status: never"},["💀 10"]]
+    ],
+    "paintball-war-room":[
+      ["eddie","11:12 PM","HTF bias bullish. I'm flanking left behind the order block.",null,null],
+      ["julian","11:13 PM","bro you said that about NVDA and got liquidated",null,["😂 9"]],
+      ["mateo","11:15 PM","what time does paintball open, is it London time",null,null],
+      ["holden","11:15 PM","it's been 4 years mateo",null,["💀 13"]]
+    ],
+    "yacht-signals":[
+      ["sai","2:40 PM","Marked a fair value gap at the sandbar. We fill it Sunday.",null,["🛥️ 7"]],
+      ["hassan","2:41 PM","who's bringing the speaker",null,null],
+      ["julian","2:41 PM","whoever went SHORT has to stay on the dock",null,["😂 6"]]
+    ],
+    "loss-porn":[
+      ["mateo","3:03 AM","slept through the London open again",null,["🛏️ 11"]],
+      ["julian","3:04 AM","Yash got me out of crippling debt. then I bought a course.",null,["💀 14","🤝 3"]]
+    ]
+  };
+  const chans=document.getElementById("chans"),msgs=document.getElementById("msgs"),chanName=document.getElementById("chanName");
+  function renderChan(k){
+    [...chans.children].forEach(b=>b.setAttribute("aria-selected",String(b.dataset.k===k)));
+    chanName.textContent=k;
+    msgs.innerHTML=ch[k].map(([u,t,txt,emb,re])=>`<li class="dc-msg"><span class="dc-av" style="background:${C[u][0]}">${C[u][1]}</span><div><header><b style="color:${C[u][0]}">${N[u]}</b>${u==="bot"?'<span class="dc-bot">BOT</span>':""}<time>Today at ${t}</time></header>${txt?`<p>${txt}</p>`:""}${emb?`<div class="dc-embed${emb.red?" red":""}"><b>${esc(emb.t)}</b><span class="n" style="color:${emb.red?"var(--short)":"var(--long)"}">${esc(emb.n)}</span><div>${esc(emb.s)}</div></div>`:""}${re?`<div class="dc-react">${re.map(r=>`<span>${r}</span>`).join("")}</div>`:""}</div></li>`).join("");
+  }
+  Object.keys(ch).forEach(k=>{const b=document.createElement("button");b.type="button";b.setAttribute("role","tab");b.dataset.k=k;b.textContent="# "+k;b.addEventListener("click",()=>renderChan(k));chans.appendChild(b);});
+  renderChan("announcements");
+
+  // Guru pop-up ad
+  const ad=document.getElementById("ad"),adT=document.getElementById("adT");let adLeft=299,adTick=null,lastFocus=null;
+  function tickAd(){adT.textContent=String(Math.floor(adLeft/60)).padStart(2,"0")+":"+String(adLeft%60).padStart(2,"0");adLeft=adLeft>0?adLeft-1:299;}
+  function openAd(){lastFocus=document.activeElement;ad.hidden=false;adLeft=299;tickAd();clearInterval(adTick);adTick=setInterval(tickAd,1000);document.getElementById("adGo").focus({preventScroll:true});}
+  function closeAd(){ad.hidden=true;clearInterval(adTick);if(lastFocus&&lastFocus.focus)lastFocus.focus({preventScroll:true});}
+  document.getElementById("adX").addEventListener("click",closeAd);
+  document.getElementById("adNo").addEventListener("click",closeAd);
+  document.getElementById("adOpen").addEventListener("click",openAd);
+  ad.addEventListener("click",e=>{if(e.target===ad)closeAd();});
+  addEventListener("keydown",e=>{if(e.key==="Escape"&&!ad.hidden)closeAd();});
+  document.getElementById("adGo").addEventListener("click",()=>{const g=document.getElementById("adGo");g.textContent="Payment declined. Just like your eval.";setTimeout(()=>{closeAd();g.textContent="YES, I WANT TO BE FUNDED";},1600);});
+
+  let spots=3;const spotEl=document.getElementById("adSpots"),watchEl=document.getElementById("adWatch"),tEl=document.getElementById("adTest");
+  const tests=[["Yash got me out of crippling debt. Then I bought this course.","Julian · back in debt"],["Before this I worked at Wendy's. Now I work at Wendy's with a TradingView sub.","Holden · funded (in his dreams)"],["I drew an FVG on the Uber Eats receipt and saved $4.","Sai Prakyath · 4-figure trader (it's $4)"],["I passed a $50K eval. In sim. My mom is so proud.","Eddie · 0 payouts"],["I only trade the killzone. I sleep through it every time.","Mateo · 11 AM wake-up club"],["One call with him and now I say 'liquidity' at family dinners.","Hassan · banned from the group chat"],["He told me to wait for the setup. I've been waiting since 2021.","Julian · still waiting"],["I put my stop loss behind the paintball bunker. It got hit too.","Eddie · liquidated on Saturday"],["Mateo marked my bias as bearish. He was right about my life.","Holden"],["The banks fear Sai. The banks have never heard of Sai.","Sai Prakyath"]];let ti=0;
+  function showTest(){tEl.innerHTML=`“${esc(tests[ti][0])}”<small>— ${esc(tests[ti][1])}</small>`;ti=(ti+1)%tests.length;}
+  let w=1247;setInterval(()=>{if(ad.hidden)return;w+=Math.floor(Math.random()*40-12);watchEl.textContent=w.toLocaleString();if(Math.random()<.25&&spots>1){spots--;spotEl.textContent=spots;}},1500);
+  showTest();setInterval(()=>{if(!ad.hidden)showTest();},3200);
+  const rc=document.getElementById("adRain"),rx=rc.getContext("2d");const glyphs=["$","💸","💰","🚀","📈","💎","🛥️"];let drops=[];
+  function rain(){if(ad.hidden){requestAnimationFrame(rain);return;}const W=rc.clientWidth,H=rc.clientHeight,d=devicePixelRatio||1;if(rc.width!==W*d||rc.height!==H*d){rc.width=W*d;rc.height=H*d;}rx.setTransform(d,0,0,d,0,0);rx.clearRect(0,0,W,H);if(drops.length<40)drops.push({x:Math.random()*W,y:-30,v:1.5+Math.random()*3,g:glyphs[Math.floor(Math.random()*glyphs.length)],s:16+Math.random()*16,r:Math.random()*6});drops.forEach(o=>{o.y+=o.v;o.r+=.03;rx.save();rx.translate(o.x,o.y);rx.rotate(Math.sin(o.r)*.4);rx.font=o.s+"px sans-serif";rx.fillStyle="#ffcf5a";rx.fillText(o.g,0,0);rx.restore();});drops=drops.filter(o=>o.y<H+40);requestAnimationFrame(rain);}
+  if(!reduce)requestAnimationFrame(rain);
+  openAd();
+
+})();
+</script>
+
+</body>
+</html>
